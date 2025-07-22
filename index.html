@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Faulz Sauaia Advogados - Sua Defesa com Técnica, Estratégia e Confiança
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cor-primaria: #0a2140; /* Azul Marinho Escuro */
+        --cor-secundaria: #1e3a5f; /* Azul mais claro */
+        --cor-destaque: #d4af37; /* Dourado */
+        --cor-texto: #333;
+        --cor-fundo-claro: #f8f8f8;
+        --cor-fundo-escuro: #07172a;
+        --cor-borda: #ddd;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.6;
+        color: var(--cor-texto);
+        background-color: #fff;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header */
+      header {
+        background-color: var(--cor-primaria);
+        color: #fff;
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: 'Merriweather', serif;
+        font-size: 1.8em;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .logo span {
+        color: var(--cor-destaque);
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+
+      nav ul li {
+        margin-left: 30px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: var(--cor-destaque);
+      }
+
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .menu-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 4px 0;
+        transition: 0.4s;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url('https://source.unsplash.com/random/1600x900/?law,justice,office')
+            no-repeat center center/cover;
+        color: #fff;
+        text-align: center;
+        padding: 150px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 600px;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(10, 33, 64, 0.6); /* Overlay escuro */
+        z-index: 1;
+      }
+
+      .hero .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+      }
+
+      .hero h1 {
+        font-family: 'Merriweather', serif;
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        font-size: 1.3em;
+        margin-bottom: 40px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--cor-destaque);
+        color: var(--cor-primaria);
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 700;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin: 10px;
+      }
+
+      .btn:hover {
+        background-color: #c09f2d;
+        transform: translateY(-2px);
+      }
+
+      .btn.secondary {
+        background-color: transparent;
+        color: #fff;
+        border: 2px solid #fff;
+      }
+
+      .btn.secondary:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--cor-destaque);
+        border-color: var(--cor-destaque);
+      }
+
+      /* Sections General */
+      section {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      section:nth-of-type(even) {
+        background-color: var(--cor-fundo-claro);
+      }
+
+      section h2 {
+        font-family: 'Merriweather', serif;
+        font-size: 2.5em;
+        color: var(--cor-primaria);
+        margin-bottom: 40px;
+        position: relative;
+        display: inline-block;
+      }
+
+      section h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color: var(--cor-destaque);
+        margin: 10px auto 0;
+      }
+
+      section p {
+        font-size: 1.1em;
+        max-width: 800px;
+        margin: 0 auto 20px auto;
+        text-align: justify;
+      }
+
+      /* Sobre Faulz Sauaia */
+      #sobre .content-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+      }
+
+      #sobre .text-content {
+        flex: 2;
+        min-width: 300px;
+        max-width: 700px;
+      }
+
+      #sobre .image-content {
+        flex: 1;
+        min-width: 250px;
+        text-align: center;
+      }
+
+      #sobre .image-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Áreas de Atuação */
+      #areas-atuacao .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      #areas-atuacao .area-card {
+        background-color: #fff;
+        border: 1px solid var(--cor-borda);
+        border-radius: 8px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      #areas-atuacao .area-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      #areas-atuacao .area-card i {
+        /* Se usar Font Awesome ou ícones */
+        font-size: 3em;
+        color: var(--cor-destaque);
+        margin-bottom: 15px;
+      }
+
+      #areas-atuacao .area-card h3 {
+        font-family: 'Merriweather', serif;
+        font-size: 1.5em;
+        color: var(--cor-primaria);
+        margin-bottom: 10px;
+      }
+
+      #areas-atuacao .area-card ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+        margin-top: 15px;
+      }
+
+      #areas-atuacao .area-card ul li {
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      /* Nossa Abordagem */
+      #nossa-abordagem .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      #nossa-abordagem .valor-card {
+        background-color: var(--cor-primaria);
+        color: #fff;
+        border-radius: 8px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+      }
+
+      #nossa-abordagem .valor-card:hover {
+        background-color: var(--cor-secundaria);
+      }
+
+      #nossa-abordagem .valor-card i {
+        font-size: 3em;
+        color: var(--cor-destaque);
+        margin-bottom: 15px;
+      }
+
+      #nossa-abordagem .valor-card h3 {
+        font-family: 'Merriweather', serif;
+        font-size: 1.4em;
+        margin-bottom: 10px;
+        color: #fff;
+      }
+
+      #nossa-abordagem .valor-card p {
+        font-size: 0.95em;
+        color: #e0e0e0;
+        text-align: center;
+      }
+
+      /* Contato */
+      #contato {
+        background-color: var(--cor-fundo-claro);
+      }
+
+      #contato .contact-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+        text-align: left;
+      }
+
+      #contato .contact-form {
+        flex: 2;
+        min-width: 300px;
+        max-width: 600px;
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      #contato .contact-form label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: var(--cor-primaria);
+      }
+
+      #contato .contact-form input,
+      #contato .contact-form textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid var(--cor-borda);
+        border-radius: 5px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1em;
+      }
+
+      #contato .contact-form textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      #contato .contact-info {
+        flex: 1;
+        min-width: 250px;
+        padding: 40px;
+        background-color: var(--cor-primaria);
+        color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      #contato .contact-info p {
+        margin-bottom: 15px;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        text-align: left; /* Garante que o texto esteja alinhado à esquerda */
+      }
+
+      #contato .contact-info p i {
+        margin-right: 10px;
+        color: var(--cor-destaque);
+        font-size: 1.2em;
+      }
+
+      #contato .contact-info a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      #contato .contact-info a:hover {
+        color: var(--cor-destaque);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--cor-fundo-escuro);
+        color: #bbb;
+        padding: 40px 0;
+        text-align: center;
+        font-size: 0.9em;
+      }
+
+      footer .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      footer .logo {
+        margin-bottom: 15px;
+        font-size: 1.5em;
+      }
+
+      footer nav ul {
+        margin-bottom: 20px;
+      }
+
+      footer nav ul li {
+        display: inline-block;
+        margin: 0 15px;
+      }
+
+      footer nav ul li a {
+        color: #bbb;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      footer nav ul li a:hover {
+        color: var(--cor-destaque);
+      }
+
+      .social-icons {
+        margin-top: 15px;
+      }
+
+      .social-icons a {
+        color: #fff;
+        font-size: 1.5em;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: var(--cor-destaque);
+      }
+
+      /* Responsividade */
+      @media (max-width: 992px) {
+        .hero h1 {
+          font-size: 2.8em;
+        }
+        .hero p {
+          font-size: 1.1em;
+        }
+        section h2 {
+          font-size: 2em;
+        }
+        nav ul li {
+          margin-left: 20px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        header .container {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .logo {
+          margin-bottom: 10px;
+        }
+
+        nav {
+          width: 100%;
+          order: 2; /* Move a navegação para baixo no modo responsivo */
+          text-align: center;
+        }
+
+        nav ul {
+          flex-direction: column;
+          display: none; /* Escondido por padrão, JavaScript irá mostrar */
+          background-color: var(--cor-primaria);
+          width: 100%;
+          padding: 10px 0;
+        }
+
+        nav ul.active {
+          display: flex;
+        }
+
+        nav ul li {
+          margin: 10px 0;
+        }
+
+        .menu-toggle {
+          display: flex;
+          order: 1; /* Coloca o toggle antes da navegação */
+        }
+
+        .hero {
+          padding: 100px 0;
+          min-height: 500px;
+        }
+        .hero h1 {
+          font-size: 2.2em;
+        }
+        .hero p {
+          font-size: 1em;
+        }
+
+        #sobre .content-wrapper,
+        #contato .contact-wrapper {
+          flex-direction: column;
+        }
+
+        #sobre .image-content {
+          order: -1; /* Coloca a imagem antes do texto em telas menores */
+        }
+
+        #contato .contact-form,
+        #contato .contact-info {
+          max-width: 100%;
+          padding: 30px;
+        }
+
+        .btn {
+          padding: 12px 25px;
+          font-size: 0.9em;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 1.8em;
+        }
+        section h2 {
+          font-size: 1.8em;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="#" class="logo">Faulz Sauaia<span> Advogados</span></a>
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <nav>
+          <ul id="navbar-menu">
+            <li><a href="#hero">Início</a></li>
+            <li><a href="#sobre">Sobre Faulz Sauaia</a></li>
+            <li><a href="#areas-atuacao">Áreas de Atuação</a></li>
+            <li><a href="#nossa-abordagem">Nossa Abordagem</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <h1>
+          Faulz Sauaia Advogados: Sua Defesa com Técnica, Estratégia e
+          Confiança.
+        </h1>
+        <p>
+          Atuação jurídica especializada nas esferas criminal, eleitoral e de
+          direito público, com foco em resultados e na proteção dos seus
+          direitos.
+        </p>
+        <a href="#contato" class="btn">Agende sua Consulta</a>
+        <a
+          href="https://wa.me/55919XXXXYYYY"
+          target="_blank"
+          class="btn secondary"
+          >Fale Conosco via WhatsApp</a
+        >
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container">
+        <h2>Faulz Sauaia: Experiência e Dedicação em Sua Defesa</h2>
+        <div class="content-wrapper">
+          <div class="text-content">
+            <p>
+              <strong
+                >Faulz Sauaia é advogado criminalista inscrito na OAB/PA sob o
+                nº 28.560</strong
+              >, com sólida atuação também nas áreas Eleitoral e de Direito
+              Público. Atua no Direito desde 2016, com passagens pela Secretaria
+              de Segurança Pública do Estado do Pará, pela Defensoria Pública do
+              Estado do Pará, além de ter exercido as funções de assessor de
+              juiz no Tribunal de Justiça do Estado do Pará (TJPA) e de promotor
+              de justiça no Ministério Público do Estado do Pará (MPPA). Há
+              quase 10 anos, dedica-se à defesa de pessoas com seriedade,
+              técnica e estratégia.
+            </p>
+            <p>
+              Em sua trajetória, também foi assessor jurídico do município de
+              Altamira/PA e da Câmara de Vereadores de São Domingos do Capim,
+              consolidando experiência prática em demandas de Direito Público e
+              na gestão administrativa municipal.
+            </p>
+            <p>
+              Reconhecido pela atuação firme, combativa e estratégica,
+              destaca-se especialmente na defesa de réus em
+              <strong>processos criminais complexos</strong>, incluindo Tribunal
+              do Júri, habeas corpus, crimes econômicos e empresariais, lavagem
+              de dinheiro, tráfico de entorpecentes, crimes de trânsito, além de
+              possuir experiência consolidada em recursos e teses perante
+              Tribunais Superiores, com amplas vitórias no Superior Tribunal de
+              Justiça (STJ). Já atuou em diversos casos de grande repercussão,
+              sempre com foco em teses inovadoras, sustentadas na doutrina e na
+              jurisprudência mais atualizada. Também atua em crimes eleitorais,
+              ações de improbidade administrativa e demandas de controle de
+              legalidade na esfera pública.
+            </p>
+            <p>
+              À frente do escritório Faulz Sauaia Advogados, lidera uma
+              <strong>equipe multidisciplinar</strong> que presta assessoria
+              jurídica completa também em Direito Civil, de Família,
+              Responsabilidade Civil, Direito Imobiliário, além das áreas
+              Trabalhista e Previdenciária, oferecendo aos clientes soluções
+              integradas, seguras e eficientes.
+            </p>
+            <p>
+              Além da prática jurídica, Faulz é palestrante e dedica-se a
+              compartilhar seu conhecimento por meio de cursos, mentorias e
+              treinamentos voltados exclusivamente à advocacia criminal,
+              contribuindo para o fortalecimento de uma prática penal técnica,
+              independente e comprometida com as garantias constitucionais.
+            </p>
+          </div>
+          <div class="image-content">
+            <img
+              src="https://source.unsplash.com/random/400x600/?professional,man,attorney"
+              alt="Faulz Sauaia - Advogado"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="areas-atuacao">
+      <div class="container">
+        <h2>Nossas Áreas de Especialização</h2>
+        <div class="grid-container">
+          <div class="area-card">
+            <i class="fas fa-gavel"></i>
+            <h3>Direito Criminal</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> Tribunal do Júri</li>
+              <li><i class="fas fa-check"></i> Habeas Corpus</li>
+              <li>
+                <i class="fas fa-check"></i> Crimes Econômicos e Empresariais
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Lavagem de Dinheiro e Tráfico
+              </li>
+              <li><i class="fas fa-check"></i> Crimes de Trânsito</li>
+              <li>
+                <i class="fas fa-check"></i> Recursos em Tribunais Superiores
+                (STJ)
+              </li>
+            </ul>
+          </div>
+          <div class="area-card">
+            <i class="fas fa-landmark"></i>
+            <h3>Direito Eleitoral</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> Crimes Eleitorais</li>
+              <li>
+                <i class="fas fa-check"></i> Ações de Improbidade Administrativa
+              </li>
+            </ul>
+          </div>
+          <div class="area-card">
+            <i class="fas fa-balance-scale-right"></i>
+            <h3>Direito Público</h3>
+            <ul>
+              <li>
+                <i class="fas fa-check"></i> Demandas de Controle de Legalidade
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Assessoria Jurídica Municipal
+              </li>
+            </ul>
+          </div>
+          <div class="area-card">
+            <i class="fas fa-building"></i>
+            <h3>Direito Civil</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> Direito de Família</li>
+              <li><i class="fas fa-check"></i> Responsabilidade Civil</li>
+              <li><i class="fas fa-check"></i> Direito Imobiliário</li>
+            </ul>
+          </div>
+          <div class="area-card">
+            <i class="fas fa-briefcase"></i>
+            <h3>Direito Trabalhista</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> Reclamações Trabalhistas</li>
+              <li><i class="fas fa-check"></i> Consultoria e Acordos</li>
+            </ul>
+          </div>
+          <div class="area-card">
+            <i class="fas fa-hand-holding-usd"></i>
+            <h3>Direito Previdenciário</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> Aposentadorias e Benefícios</li>
+              <li><i class="fas fa-check"></i> Revisões Previdenciárias</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="nossa-abordagem">
+      <div class="container">
+        <h2>Compromisso com a sua Tranquilidade</h2>
+        <div class="grid-container">
+          <div class="valor-card">
+            <i class="fas fa-bolt"></i>
+            <h3>Agilidade e Resposta Rápida</h3>
+            <p>
+              Entendemos a urgência de cada caso e atuamos com celeridade e
+              eficiência.
+            </p>
+          </div>
+          <div class="valor-card">
+            <i class="fas fa-cogs"></i>
+            <h3>Técnica e Estratégia</h3>
+            <p>
+              Análise aprofundada e soluções inovadoras para as situações mais
+              complexas.
+            </p>
+          </div>
+          <div class="valor-card">
+            <i class="fas fa-handshake"></i>
+            <h3>Confiança e Transparência</h3>
+            <p>
+              Construímos relações baseadas na ética, no sigilo e na comunicação
+              clara.
+            </p>
+          </div>
+          <div class="valor-card">
+            <i class="fas fa-user-tie"></i>
+            <h3>Atendimento Personalizado</h3>
+            <p>
+              Cada cliente é único e merece uma defesa sob medida, com foco em
+              seus objetivos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <h2>Fale Conosco e Agende sua Consulta</h2>
+        <div class="contact-wrapper">
+          <div class="contact-form">
+            <form action="#" method="POST">
+              <label for="nome">Nome Completo:</label>
+              <input type="text" id="nome" name="nome" required />
+
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="telefone">Telefone (WhatsApp):</label>
+              <input type="tel" id="telefone" name="telefone" />
+
+              <label for="assunto">Assunto:</label>
+              <input type="text" id="assunto" name="assunto" />
+
+              <label for="mensagem">Mensagem:</label>
+              <textarea id="mensagem" name="mensagem" required></textarea>
+
+              <button type="submit" class="btn">Enviar Mensagem</button>
+            </form>
+          </div>
+          <div class="contact-info">
+            <h3>Informações de Contato</h3>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Av. Exemplo, 1234 - Bairro
+              Legal, Ananindeua/PA, CEP: 67000-000
+            </p>
+            <p>
+              <i class="fas fa-phone"></i> Telefone:
+              <a href="tel:+559132123456">(91) 3212-3456</a>
+            </p>
+            <p>
+              <i class="fab fa-whatsapp"></i> WhatsApp:
+              <a href="https://wa.me/55919XXXXYYYY" target="_blank"
+                >(91) 9XXXX-YYYY</a
+              >
+            </p>
+            <p>
+              <i class="fas fa-envelope"></i> E-mail:
+              <a href="mailto:contato@faulzsauaiaadv.com.br"
+                >contato@faulzsauaiaadv.com.br</a
+              >
+            </p>
+            <p>
+              <i class="fas fa-clock"></i> Horário de Atendimento: Seg. a Sex.
+              das 09h às 18h
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <a href="#" class="logo">Faulz Sauaia<span> Advogados</span></a>
+        <nav>
+          <ul>
+            <li><a href="#hero">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#areas-atuacao">Áreas</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="social-icons">
+          <a href="#" target="_blank" aria-label="LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="#" target="_blank" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+        <p>&copy; 2025 Faulz Sauaia Advogados. Todos os direitos reservados.</p>
+        <p>
+          <a href="#" style="color: #bbb; text-decoration: none"
+            >Política de Privacidade</a
+          >
+          |
+          <a href="#" style="color: #bbb; text-decoration: none"
+            >Termos de Uso</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const mobileMenu = document.getElementById('mobile-menu')
+        const navbarMenu = document.getElementById('navbar-menu')
+
+        mobileMenu.addEventListener('click', function () {
+          navbarMenu.classList.toggle('active')
+        })
+
+        // Smooth scrolling para os links da navegação
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault()
+
+            const targetId = this.getAttribute('href')
+            const targetElement = document.querySelector(targetId)
+
+            if (targetElement) {
+              window.scrollTo({
+                top:
+                  targetElement.offsetTop -
+                  document.querySelector('header').offsetHeight, // Ajusta para a altura do header
+                behavior: 'smooth'
+              })
+
+              // Fecha o menu mobile após clicar em um link
+              if (navbarMenu.classList.contains('active')) {
+                navbarMenu.classList.remove('active')
+              }
+            }
+          })
+        })
+
+        // Adicionar funcionalidade básica de envio de formulário (apenas demonstração)
+        const contactForm = document.querySelector(
+          '#contato .contact-form form'
+        )
+        if (contactForm) {
+          contactForm.addEventListener('submit', function (e) {
+            e.preventDefault() // Impede o envio padrão do formulário
+
+            // Coleta os dados do formulário
+            const formData = new FormData(this)
+            const data = {}
+            for (let [key, value] of formData.entries()) {
+              data[key] = value
+            }
+
+            // Exemplo de log dos dados no console
+            console.log('Dados do formulário enviados:', data)
+
+            // Aqui você integraria com um serviço de backend (e.g., Formspree, Netlify Forms, ou um servidor próprio)
+            // alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
+            // Limpar o formulário
+            // this.reset();
+
+            // Em um cenário real, você faria uma requisição AJAX para um endpoint
+            // Exemplo (requer um backend para funcionar):
+            /*
+                    fetch('/submit-form', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(result => {
+                        console.log('Sucesso:', result);
+                        alert('Mensagem enviada com sucesso!');
+                        this.reset();
+                    })
+                    .catch(error => {
+                        console.error('Erro:', error);
+                        alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.');
+                    });
+                    */
+          })
+        }
+      })
+    </script>
+  </body>
+</html>
