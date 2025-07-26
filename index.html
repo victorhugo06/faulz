@@ -549,6 +549,25 @@
           padding: 30px;
         }
 
+        /* Adicione isso em algum lugar no seu bloco <style> */
+        .map-container {
+            margin-top: 30px; /* Espaçamento acima do mapa */
+            border-radius: 8px;
+            overflow: hidden; /* Garante que as bordas arredondadas funcionem */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            display: block; /* Remove espaços extras */
+        }
+
+        /* Ajuste para telas menores, se necessário */
+        @media (max-width: 768px) {
+            .map-container {
+                margin-top: 20px;
+            }
+        }
+
         .btn {
           padding: 12px 25px;
           font-size: 0.9em;
@@ -816,6 +835,16 @@
           <div class="contact-info">
             <h3>Informações de Contato</h3>
             <p>
+              <div class="map-container">
+                <iframe
+                    src="https://maps.google.com/?cid=13929373003399976177&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" width="100%"
+                    height="300"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
               <i class="fas fa-map-marker-alt"></i> Travessa Quintino Bocaiúva,
               N° 2301, sala 2108, Cremação, Belém-PA
             </p>
